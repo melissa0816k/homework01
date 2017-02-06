@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
 body {
-    background-color: pink;
+    background: grey;
+    color: #3903b3;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: oblique;
+    line-height: 1;
+    position: relative;
+    cursor: default;
 }
-
-h3 {
-    color: white;
-    text-align: center;
-}
-
-p {
-    font-family: verdana;
-    font-size: 15px;
-}
-</style>
-</head>
-<body>
-</html>
