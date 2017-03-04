@@ -1,36 +1,64 @@
-<html>
-  <head> 
-  <h1>Data visualization</h1> 
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  
-  <b><p><b><h2>BAR CHART</h2></b></p>
-    
-  <img src="https://cloud.githubusercontent.com/assets/25258207/22360252/2b306638-e489-11e6-831a-2011030e28a2.jpg" alt="Aviation Deaths per year" style="width:924;height:520;">
-   
-    
-    <b><p id='myp' style="color: #219231;font-size: 50px;margin-top: 80px;">Intro: </p></b>
-    
-  <p>More aviation deaths were reported since 2014; therefore CNN wrote a news report about flight risks and got the relevant data from Aviation Safety Network,the resource centre for aircraft accidents and civil aviation safety issues.</p>    
- 
-    <b><p> Desciption </p></b>
-    <p>Even though more cases of aviation accidents have been getting reported, including the shootdown of Malaysia Airlines in Ukraine, the data from ASN showed that the world has still been enjoying the safest-ever overall period in aviation history. There are more flights in a day worldwide compared to the past, i.e. 1940s due to the globalization and economic growth. The number of commercial aviation deaths has been decreasing in general.</p>
-    
-    <h3> Problems </h3> 
-<ul> 
-  <li> fail to start at zero in y-axis </li>
-  <li> stacked charts (too dense)</li> 
-  </ul> 
+<!DOCTYPE html>
+</html>
+  <head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- Use echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- Prepare the DOM element to be held by eCharts -->
+    <div id="main1" style="width: 600px; height: 400px; -webkit-tap-highlight-color: transparent; user-select: none; background: transparent;" _echarts_instance_="ec_1488594684767"><div style="position: relative; overflow: hidden; width: 600px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas width="1200" height="800" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+    <div id="main2" style="width: 600px; height: 400px; -webkit-tap-highlight-color: transparent; user-select: none; background: transparent;" _echarts_instance_="ec_1488594684768"><div style="position: relative; overflow: hidden; width: 600px; height: 400px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer;"><canvas width="1200" height="800" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 400px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
 
-  <h3> Suggestion</h3> 
- <ol> 
-   <li> increase the distance between bars, if necessary</li>
-   <li> better use line chart which is to show the trend over time </li>
-   <li> set y-axis min value to zero</li>
-  </ol></b>
+    <script type="text/javascript">
+        // Initialse eCharts
 
-  <p> <b>Reference:</b></p>
-  <a href="http://www.appledaily.com.tw/realtimenews/article/new/20150327/581863/">Apply Daily TW</a>
-  <p><a href="http://edition.cnn.com/interactive/2014/07/travel/aviation-data/">CNN - Commercial aviation deaths per year, worldwide</a></p>
+        option = {
+            "title": {
+                "text": "Hong Kong Population by gender",
+            },
+            "xAxis": [{
+                "type": "category",
+                "data": [
+                    1991,
+                    1996,
+                    2001
+                ],
+                "axisTick": {
+                    "alignWithLabel": true
+                }
+            }],
+            "yAxis": [{
+                "type": "value"
+            }],
+            "series": [{
+                "name": "Male",
+                "type": "bar",
+                "data": [
+                    2811991,
+                    3108107,
+                    3285344
+                ],
+            }, {
+                "name": "Female",
+                "type": "bar",
+                "data": [
+                    2710290,
+                    3109449,
+                    3423045
+                ],
+            }]
+        };
+
+        // Use the option to display chart
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        myChart1.setOption(option);
+
+        option['series'][0]['stack'] = 'population';
+        option['series'][1]['stack'] = 'population';
+        var myChart2 = echarts.init(document.getElementById('main2'));
+        myChart2.setOption(option);
+    </script>
+</body>
 </html>
